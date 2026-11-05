@@ -46,10 +46,9 @@ jobs:
         run: npm pack --dry-run
       - if: steps.version.outputs.changed == 'true'
         run: npm publish
-      - name: Tag published version
+      - name: Create GitHub release
         if: steps.version.outputs.changed == 'true'
         env:
+          GH_TOKEN: ${{ github.token }}
           VERSION: ${{ steps.version.outputs.version }}
-        run: |
-          git tag "v$VERSION"
-          git push origin "refs/tags/v$VERSION"
+        run: gh release create "v$VERSION" --target "$GITHUB_SHA" --title "v$VERSION" --generate-notes

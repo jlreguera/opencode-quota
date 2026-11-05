@@ -5,12 +5,12 @@ in the OpenCode V2 terminal interface.
 
 ## Installation
 
-Once the package is published, add it to `opencode.jsonc`:
+Add the package to `opencode.jsonc`:
 
 ```jsonc
 {
   "$schema": "https://opencode.ai/config.json",
-  "plugins": ["@jlreguera/opencode-quota@0.1.1"]
+  "plugins": ["@jlreguera/opencode-quota"]
 }
 ```
 

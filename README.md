@@ -10,7 +10,7 @@ Once the package is published, add it to `opencode.jsonc`:
 ```jsonc
 {
   "$schema": "https://opencode.ai/config.json",
-  "plugins": ["@jlreguera/opencode-quota@0.1.0"]
+  "plugins": ["@jlreguera/opencode-quota@0.1.1"]
 }
 ```
 

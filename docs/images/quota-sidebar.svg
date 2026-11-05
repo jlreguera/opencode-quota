@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="460" height="430" viewBox="0 0 460 430" role="img" aria-labelledby="title description">
+  <title id="title">Quota in the sidebar</title>
+  <desc id="description">Example OpenAI quota usage, reset times, and reset expiration dates in the OpenCode sidebar.</desc>
+  <rect width="460" height="430" fill="#111111"/>
+  <g font-family="monospace" font-size="18" fill="#e7e7e7">
+    <text x="22" y="44" font-weight="bold">Example session</text>
+    <text x="22" y="96" font-weight="bold">Context</text>
+    <g fill="#808080">
+      <text x="22" y="122">117,230 tokens</text>
+      <text x="22" y="148">19% used</text>
+    </g>
+    <text x="22" y="200">OpenAI</text>
+    <text x="44" y="278">resets: 2</text>
+    <text x="44" y="304">· expires 30/11/2026, 21:23 UTC</text>
+    <text x="44" y="330">· expires 01/12/2026, 21:59 UTC</text>
+    <text x="22" y="410" fill="#808080">~/project</text>
+  </g>
+  <rect x="132" y="208" width="110" height="52" fill="#494949"/>
+  <g fill="#80d893">
+    <rect x="132" y="208" width="33" height="26"/>
+    <rect x="132" y="234" width="11" height="26"/>
+  </g>
+  <g font-family="monospace" font-size="18" fill="#80d893">
+    <text x="44" y="227">5h</text>
+    <text x="44" y="253">weekly</text>
+    <text x="253" y="227">1h08m</text>
+    <text x="264" y="253">6d7h</text>
+  </g>
+  <g font-family="monospace" font-size="18" fill="#e7e7e7" text-anchor="middle">
+    <text x="187" y="227">30%</text>
+    <text x="187" y="253">9%</text>
+  </g>
+</svg>

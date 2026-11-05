@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="660" height="260" viewBox="0 0 660 260" role="img" aria-labelledby="title description">
+  <title id="title">Quota footer settings</title>
+  <desc id="description">The quota footer settings dialog, showing options to display quota bars and configure the OpenAI reset expiration alert.</desc>
+  <rect width="660" height="260" fill="#111111"/>
+  <g font-family="monospace" font-size="18">
+    <text x="44" y="46" fill="#e7e7e7" font-weight="bold">Quota footer</text>
+    <text x="583" y="46" fill="#808080">esc</text>
+    <text x="44" y="98" fill="#808080">Search</text>
+    <rect x="44" y="78" width="10" height="26" fill="none" stroke="#fab387"/>
+    <rect x="11" y="130" width="638" height="26" fill="#fab387"/>
+    <text x="44" y="150" fill="#000000">[x] Show quota bars</text>
+    <text x="44" y="176" fill="#e7e7e7">OpenAI reset expiration alert: 6h</text>
+    <text x="44" y="202" fill="#e7e7e7">Done</text>
+  </g>
+</svg>

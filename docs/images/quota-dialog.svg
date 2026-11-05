@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="660" height="548" viewBox="0 0 660 548" role="img" aria-labelledby="title description">
+  <title id="title">Quota dialog</title>
+  <desc id="description">Example usage and reset times for Claude, OpenAI, and OpenCode Go.</desc>
+  <rect width="660" height="548" fill="#111111"/>
+  <g font-family="monospace" font-size="18" fill="#e7e7e7">
+    <text x="22" y="70">Quota (used)</text>
+    <text x="22" y="122">Claude</text>
+    <text x="22" y="252">OpenAI</text>
+    <text x="44" y="330">resets: 2</text>
+    <text x="44" y="356">· expires 30/11/2026, 21:23 UTC</text>
+    <text x="44" y="382">· expires 01/12/2026, 21:59 UTC</text>
+    <text x="22" y="434">OpenCode Go</text>
+  </g>
+  <g fill="#494949">
+    <rect x="143" y="130" width="110" height="78"/>
+    <rect x="143" y="260" width="110" height="52"/>
+    <rect x="143" y="442" width="110" height="78"/>
+  </g>
+  <g fill="#80d893">
+    <rect x="143" y="130" width="11" height="26"/>
+    <rect x="143" y="156" width="22" height="26"/>
+    <rect x="143" y="182" width="11" height="26"/>
+    <rect x="143" y="260" width="33" height="26"/>
+    <rect x="143" y="286" width="11" height="26"/>
+    <rect x="143" y="468" width="11" height="26"/>
+    <rect x="143" y="494" width="22" height="26"/>
+  </g>
+  <g font-family="monospace" font-size="18" fill="#80d893">
+    <text x="44" y="149">5h</text>
+    <text x="44" y="175">weekly</text>
+    <text x="44" y="201">Fable</text>
+    <text x="44" y="279">5h</text>
+    <text x="44" y="305">weekly</text>
+    <text x="44" y="461">5h</text>
+    <text x="44" y="487">weekly</text>
+    <text x="44" y="513">monthly</text>
+    <text x="275" y="149">reset 4h24m</text>
+    <text x="275" y="175">reset 3d10h</text>
+    <text x="275" y="201">reset 3d10h</text>
+    <text x="275" y="279">reset 1h15m</text>
+    <text x="275" y="305">reset  6d7h</text>
+    <text x="275" y="461">reset 5h00m</text>
+    <text x="275" y="487">reset  3d7h</text>
+    <text x="275" y="513">reset 20d7h</text>
+  </g>
+  <g font-family="monospace" font-size="18" fill="#e7e7e7" text-anchor="middle">
+    <text x="198" y="149">10%</text>
+    <text x="198" y="175">20%</text>
+    <text x="198" y="201">10%</text>
+    <text x="198" y="279">30%</text>
+    <text x="198" y="305">9%</text>
+    <text x="198" y="461">0%</text>
+    <text x="198" y="487">8%</text>
+    <text x="198" y="513">16%</text>
+  </g>
+</svg>

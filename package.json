@@ -1,0 +1,29 @@
+{
+  "name": "@jlreguera/opencode-quota",
+  "version": "0.1.0",
+  "description": "Quota indicators for OpenCode",
+  "type": "module",
+  "license": "MIT",
+  "author": "jlreguera",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jlreguera/opencode-quota.git"
+  },
+  "files": ["index.ts", "tui.tsx", "rpc.ts", "docs/images"],
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@opencode/plugin": "2.2.5"
+  },
+  "peerDependencies": {
+    "@opentui/core": ">=0.6.6",
+    "@opentui/solid": ">=0.6.6",
+    "solid-js": ">=1.9.0"
+  },
+  "exports": {
+    ".": "./index.ts",
+    "./tui": "./tui.tsx",
+    "./rpc": "./rpc.ts"
+  }
+}

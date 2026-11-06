@@ -47,6 +47,12 @@ OpenCode connections. The plugin sends the relevant credentials to each
 provider to retrieve usage. These endpoints are unofficial and may change or
 stop working.
 
+For debugging, set `OPENCODE_QUOTA_DEBUG=1` or the plugin option `debug: true`.
+Each process writes samples and a request log in a new `quota-samples-*`
+directory under the system temporary directory. Samples may contain sensitive
+data despite redaction; inspect them before sharing and delete them when no
+longer needed.
+
 ## License
 
 [MIT](LICENSE)

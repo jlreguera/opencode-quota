@@ -27,10 +27,20 @@ const DEFAULT_RETRY_MS = 5 * 60_000
 const RETRY_MARGIN = 1.1
 const CACHE_MS = 60_000
 
-// Development aid: the last answer of each endpoint, with every string replaced except timestamps and a
-// few labels (no emails or ids), plus the rate limit headers of any 429, so shapes can be inspected offline.
-const SAMPLES_DIR = "/tmp/quota-samples"
+// Development aid: the last answer of each endpoint, with most strings replaced, plus the rate limit
+// headers of any 429, so shapes can be inspected offline. Samples can still contain sensitive values.
 const KEEP_STRINGS = new Set(["kind", "group", "status", "severity", "model", "surface", "plan_type", "currency", "display_name"])
+
+// Each process gets a new private directory; never reuse a predictable path in the shared temp directory.
+let samplesDir: Promise<string> | undefined
+function sampleDirectory(): Promise<string> {
+  return samplesDir ??= (async () => {
+    const { mkdtemp } = await import("node:fs/promises")
+    const { tmpdir } = await import("node:os")
+    const { join } = await import("node:path")
+    return mkdtemp(join(tmpdir(), "quota-samples-"))
+  })()
+}
 
 function redact(value: unknown, key = ""): unknown {
   if (typeof value === "string") {
@@ -46,11 +56,15 @@ function redact(value: unknown, key = ""): unknown {
 async function capture(debug: boolean, url: string, suffix: string, data: unknown): Promise<void> {
   if (!debug) return
   try {
-    const { mkdir, writeFile } = await import("node:fs/promises")
+    const { writeFile } = await import("node:fs/promises")
+    const { constants } = await import("node:fs")
     const target = new URL(url)
     const name = `${target.hostname}${target.pathname}`.replace(/\W+/g, "_").replace(/^_|_$/g, "")
-    await mkdir(SAMPLES_DIR, { recursive: true })
-    await writeFile(`${SAMPLES_DIR}/${name}${suffix}.json`, JSON.stringify(data, null, 1))
+    const dir = await sampleDirectory()
+    await writeFile(`${dir}/${name}${suffix}.json`, JSON.stringify(data, null, 1), {
+      mode: 0o600,
+      flag: constants.O_WRONLY | constants.O_CREAT | constants.O_TRUNC | (constants.O_NOFOLLOW ?? 0),
+    })
   } catch {}
 }
 
@@ -59,9 +73,13 @@ async function capture(debug: boolean, url: string, suffix: string, data: unknow
 async function log(debug: boolean, line: string): Promise<void> {
   if (!debug) return
   try {
-    const { mkdir, appendFile } = await import("node:fs/promises")
-    await mkdir(SAMPLES_DIR, { recursive: true })
-    await appendFile(`${SAMPLES_DIR}/requests.log`, `${new Date().toISOString()} ${line}\n`)
+    const { appendFile } = await import("node:fs/promises")
+    const { constants } = await import("node:fs")
+    const dir = await sampleDirectory()
+    await appendFile(`${dir}/requests.log`, `${new Date().toISOString()} ${line}\n`, {
+      mode: 0o600,
+      flag: constants.O_WRONLY | constants.O_CREAT | constants.O_APPEND | (constants.O_NOFOLLOW ?? 0),
+    })
   } catch {}
 }
 
